@@ -13,7 +13,7 @@ while (username === null || username.length < USERNAME_MIN_LENGTH) {
 }
 
 
-appendMessage('You joined')
+newUser('You joined')
 socket.emit('new-user', username)
 
 form.addEventListener('submit', submitMessage)
@@ -33,12 +33,12 @@ socket.on('send-message', message => {
 })
 
 socket.on('user-connected', username => {
-  appendMessage(`${username} connected`)
+  newUser(`${username} connected`)
 })
 
 
 socket.on('user-disconnected', username => {
-  appendMessage(`${username} disconnected`)
+  newUser(`${username} disconnected`)
 })
 
 
@@ -58,7 +58,7 @@ function appendMessage(message) {
   messages.append(messageElement)
 
 
-  const messageTimeElement = document.createElement('span')
+  const messageTimeElement = document.createElement('p')
   messageTimeElement.innerText = time
   messages.append(messageTimeElement)
 
@@ -67,6 +67,22 @@ function appendMessage(message) {
   messages.scrollTop = messages.scrollHeight
 
 
-
 }
 
+
+
+
+function newUser(message) {
+
+
+
+  const messageElement = document.createElement('p')
+  messageElement.innerText = message
+  messages.append(messageElement)
+
+
+
+  messages.scrollTop = messages.scrollHeight
+
+
+}

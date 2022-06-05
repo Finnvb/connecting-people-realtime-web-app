@@ -69,7 +69,7 @@ section ul>li {
   display: table;
   max-width: 20rem;
   overflow-wrap: anywhere;
-  margin: 10px 10px 0px 10px;
+  /* margin: 10px 10px; */
 
 }
 
@@ -121,7 +121,13 @@ section div:last-child {
 
 
 
-
+section ul p{
+  font-size: 1rem;
+  color: var(--blue);
+  margin-left: 10px;
+  /* background-color: var(--purple); */
+  margin-bottom: 1.5rem;
+}
 
 
 
