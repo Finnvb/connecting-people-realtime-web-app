@@ -9,8 +9,10 @@
 }
 
 :root {
-  --darkBlue: #152853;
-  --lightBlue: #4daae5;
+  --blue: #050542;
+  --Green: #66e5bf;
+  --purple: #a675f5;
+  --white: #ffffff;
 }
 
 main {
@@ -26,16 +28,16 @@ section {
   width: 20rem;
   height: 35rem;
   border-radius: 1rem;
-  box-shadow: 0.8rem 0.8rem 1.6rem 0 var(--lightBlue),
-    -0.8rem -0.8rem 1.6rem 0 var(--lightBlue);
+  box-shadow: 0.8rem 0.8rem 1.6rem 0 var(--blue),
+    -0.8rem -0.8rem 1.6rem 0 var(--blue);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--darkBlue);
+  background-color: var(--Green);
 }
 
 section div:first-child {
-  border-bottom: 3px solid var(--lightBlue);
+  border-bottom: 3px solid var(--blue);
   width: 20rem;
   display: flex;
   justify-content: center;
@@ -46,7 +48,7 @@ section div:first-child {
 section h1 {
   font-weight: bold;
   font-size: 20px;
-  color: var(--lightBlue);
+  color: var(--blue);
 }
 
 section ul {
@@ -61,16 +63,13 @@ section ul {
 section ul>li {
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
-  background-color: var(--lightBlue);
+  background-color: var(--blue);
   border-radius: 6px;
-  color: var(--darkBlue);
+  color: var(--Green);
   display: table;
-  /* margin: 10px; */
   max-width: 20rem;
   overflow-wrap: anywhere;
-
-  margin-top: 10px;
-  margin-left: 10px;
+  margin: 10px 10px 0px 10px;
 
 }
 
@@ -95,7 +94,7 @@ section form input[type='text'] {
 }
 
 section div:last-child {
-  border-top: 3px solid var(--lightBlue);
+  border-top: 3px solid var(--blue);
   width: 20rem;
   display: flex;
   justify-content: center;
@@ -105,12 +104,18 @@ section div:last-child {
 
 
 .send-button {
-  transition: 0.5s;
+  transition: 0.3s;
   margin-left: 1rem;
+  background-color: var(--blue);
+  color: var(--Green);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0 0.6rem;
+  box-sizing: border-box;
 }
 
 .send-button:hover {
-  transform: scale(110%);
+  transform: scale(105%);
 }
 
 
@@ -124,7 +129,7 @@ section div:last-child {
 
 
 span{
-color: var(--lightBlue);
+color: var(--blue);
 margin-left: 10px;
 font-size: 0.7rem;
 }
