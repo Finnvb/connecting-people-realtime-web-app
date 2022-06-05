@@ -65,9 +65,13 @@ section ul>li {
   border-radius: 6px;
   color: var(--darkBlue);
   display: table;
-  margin: 10px;
+  /* margin: 10px; */
   max-width: 20rem;
   overflow-wrap: anywhere;
+
+  margin-top: 10px;
+  margin-left: 10px;
+
 }
 
 section form {
@@ -107,4 +111,20 @@ section div:last-child {
 
 .send-button:hover {
   transform: scale(110%);
+}
+
+
+
+
+
+
+
+
+
+
+
+span{
+color: var(--lightBlue);
+margin-left: 10px;
+font-size: 0.7rem;
 }

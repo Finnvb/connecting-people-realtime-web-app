@@ -1,20 +1,72 @@
-let socket = io()
-let messages = document.querySelector('section ul')
-let input = document.querySelector('input')
-let form = document.querySelector('form')
+const socket = io()
+const messages = document.querySelector('section ul')
+const input = document.querySelector('input')
+const form = document.querySelector('form')
+const username = prompt('What is your name?')
+const USERNAME_MIN_LENGTH = 3
+
+
+while (username === null || username.length < USERNAME_MIN_LENGTH) {
+  username = prompt(
+    `Username must be longer than ${USERNAME_MIN_LENGTH} characters`
+  )
+}
+
+
+appendMessage('You joined')
+socket.emit('new-user', username)
 
 form.addEventListener('submit', submitMessage)
 
-function submitMessage(event){
+function submitMessage(event) {
   event.preventDefault()
-  
-  if (input.value) {
-    socket.emit('message', input.value)
-    input.value = ''
-  }
+  const message = input.value
+  if (input.value === '') return
+  appendMessage(`You: ${message}`)
+  socket.emit('send-message', message)
+  input.value = ''
 }
 
-socket.on('message', message => {
-  messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
-  messages.scrollTop = messages.scrollHeight
+socket.on('send-message', message => {
+
+  appendMessage(`${message.username}: ${message.message}`)
 })
+
+socket.on('user-connected', username => {
+  appendMessage(`${username} connected`)
+})
+
+
+socket.on('user-disconnected', name => {
+  appendMessage(`${name} disconnected`)
+})
+
+
+function appendMessage(message) {
+
+  const date = new Date()
+  const hours = date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()
+  const minutes =
+    date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()
+  const time = `${hours}:${minutes}`
+
+
+
+
+  const messageElement = document.createElement('li')
+  messageElement.innerText = message
+  messages.append(messageElement)
+
+
+  const messageTimeElement = document.createElement('span')
+  messageTimeElement.innerText = time
+  messages.append(messageTimeElement)
+
+
+
+  messages.scrollTop = messages.scrollHeight
+
+
+
+}
+
