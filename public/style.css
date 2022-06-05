@@ -10,7 +10,7 @@
 
 :root {
   --blue: #050542;
-  --Green: #66e5bf;
+  --green: #66e5bf;
   --purple: #a675f5;
   --white: #ffffff;
 }
@@ -28,12 +28,12 @@ section {
   width: 20rem;
   height: 35rem;
   border-radius: 1rem;
-  box-shadow: 0.8rem 0.8rem 1.6rem 0 var(--blue),
-    -0.8rem -0.8rem 1.6rem 0 var(--blue);
+  /* box-shadow: 0.8rem 0.8rem 1.6rem 0 var(--blue), */
+    /* -0.8rem -0.8rem 1.6rem 0 var(--blue); */
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--Green);
+  background-color: var(--green);
 }
 
 section div:first-child {
@@ -65,11 +65,11 @@ section ul>li {
   font-size: 0.8rem;
   background-color: var(--blue);
   border-radius: 6px;
-  color: var(--Green);
+  color: var(--green);
   display: table;
   max-width: 20rem;
   overflow-wrap: anywhere;
-  /* margin: 10px 10px; */
+  margin: 10px 10px;
 
 }
 
@@ -107,7 +107,7 @@ section div:last-child {
   transition: 0.3s;
   margin-left: 1rem;
   background-color: var(--blue);
-  color: var(--Green);
+  color: var(--green);
   border: none;
   border-radius: 0.5rem;
   padding: 0 0.6rem;
@@ -121,7 +121,7 @@ section div:last-child {
 
 
 
-section ul p{
+.user-info{
   font-size: 1rem;
   color: var(--blue);
   margin-left: 10px;
@@ -132,10 +132,9 @@ section ul p{
 
 
 
+.message{
+  color: var(--green);
 
-
-span{
-color: var(--blue);
-margin-left: 10px;
-font-size: 0.7rem;
 }
+
+

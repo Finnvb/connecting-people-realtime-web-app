@@ -22,14 +22,14 @@ function submitMessage(event) {
   event.preventDefault()
   const message = input.value
   if (input.value === '') return
-  appendMessage(`You: ${message}`)
+  appendMessage(`Jij <br> ${message}`)
   socket.emit('send-message', message)
   input.value = ''
 }
 
 socket.on('send-message', message => {
 
-  appendMessage(`${message.username}: ${message.message}`)
+  appendMessage(`${message.username} <br> ${message.message}`)
 })
 
 socket.on('user-connected', username => {
@@ -51,16 +51,38 @@ function appendMessage(message) {
   const time = `${hours}:${minutes}`
 
 
+  // const user = message.username
+
+  // const messageElement = document.createElement('li')
+  // messageElement.innerText = message
+  // messages.append(messageElement)
 
 
-  const messageElement = document.createElement('li')
-  messageElement.innerText = message
-  messages.append(messageElement)
+  // const messageTimeElement = document.createElement('p')
+  // messageTimeElement.innerText = time
+  // messages.append(messageTimeElement)
 
 
-  const messageTimeElement = document.createElement('p')
-  messageTimeElement.innerText = time
-  messages.append(messageTimeElement)
+
+
+
+
+
+  messages.insertAdjacentHTML(
+		'beforeend',
+		`
+	  <li class="message">
+    <p>${message}</p>
+    <span>${time}</span>
+  </li>
+	`
+	)
+
+
+
+
+
+
 
 
 
@@ -76,9 +98,17 @@ function newUser(message) {
 
 
 
-  const messageElement = document.createElement('p')
-  messageElement.innerText = message
-  messages.append(messageElement)
+  // const messageElement = document.createElement('p')
+  // messageElement.innerText = message
+  // messages.append(messageElement)
+
+  messages.insertAdjacentHTML(
+		'beforeend',
+		`
+	  <p class="user-info">${message}</p>
+	`
+	)
+
 
 
 
