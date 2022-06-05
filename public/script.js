@@ -37,8 +37,8 @@ socket.on('user-connected', username => {
 })
 
 
-socket.on('user-disconnected', name => {
-  appendMessage(`${name} disconnected`)
+socket.on('user-disconnected', username => {
+  appendMessage(`${username} disconnected`)
 })
 
 
