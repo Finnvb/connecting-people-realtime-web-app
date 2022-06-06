@@ -24,7 +24,7 @@ main {
   background-color: #555555;
 }
 
-section {
+.chat {
   width: 20rem;
   height: 35rem;
   border-radius: 1rem;
@@ -56,6 +56,10 @@ section ul {
   flex-grow: 2;
   width: 20rem;
   overflow-y: scroll;
+  display: flex;
+flex-direction: column;
+/* justify-content: flex-end; */
+align-items: end;
 }
 
 section form {
@@ -109,6 +113,7 @@ section div:last-child {
   color: var(--blue);
   margin-left: 10px;
   margin-bottom: 1rem;
+  align-self: center;
 }
 
 
@@ -123,6 +128,7 @@ section div:last-child {
   color: var(--green);
   display: table;
   max-width: 20rem;
+  min-width: 4rem;
   overflow-wrap: anywhere;
   margin: 10px 10px;
 
@@ -137,4 +143,33 @@ section div:last-child {
   color: var(--white);
   margin-top: 10px;
   text-align:right;
+}
+
+
+
+.user-count{
+background-color: #a675f5;
+align-self: flex-start;
+margin-top: 100px;
+margin-left: 100px;
+padding: 1rem;
+border-radius: 0.5rem;
+font-size: 14px;
+}
+
+
+
+.message-received {
+ 
+  color: var(--blue);
+  padding: 0.2rem 0.3rem;
+  font-size: 0.8rem;
+  background-color: var(--purple);
+  border-radius: 6px;
+  display: table;
+  max-width: 20rem;
+  min-width: 4rem;
+  overflow-wrap: anywhere;
+  margin: 10px 10px;
+  margin-right: auto;
 }

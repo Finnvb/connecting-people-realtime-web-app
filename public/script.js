@@ -4,7 +4,7 @@ const input = document.querySelector('input')
 const form = document.querySelector('form')
 const username = prompt('What is your name?')
 const USERNAME_MIN_LENGTH = 3
-
+let count =  document.querySelector('#count');
 
 while (username === null || username.length < USERNAME_MIN_LENGTH) {
   username = prompt(
@@ -41,6 +41,14 @@ socket.on('user-disconnected', username => {
   newUser(`${username} disconnected`)
 })
 
+socket.on('usercount', data => {
+  count.innerHTML = data;
+})
+
+socket.on('chat-message', (data) => {
+  receivedMessage(`<p class="name">${data.username}</p> ${data.message}`);
+  
+})
 
 function appendMessage(message) {
 
@@ -49,23 +57,6 @@ function appendMessage(message) {
   const minutes =
     date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()
   const time = `${hours}:${minutes}`
-
-
-  // const user = message.username
-
-  // const messageElement = document.createElement('li')
-  // messageElement.innerText = message
-  // messages.append(messageElement)
-
-
-  // const messageTimeElement = document.createElement('p')
-  // messageTimeElement.innerText = time
-  // messages.append(messageTimeElement)
-
-
-
-
-
 
 
   messages.insertAdjacentHTML(
@@ -77,26 +68,13 @@ function appendMessage(message) {
   </li>
 	`
 	)
-
-
-
-
-
-
-
-
-
   messages.scrollTop = messages.scrollHeight
-
-
 }
 
 
 
 
 function newUser(message) {
-
-
 
   // const messageElement = document.createElement('p')
   // messageElement.innerText = message
@@ -114,5 +92,30 @@ function newUser(message) {
 
   messages.scrollTop = messages.scrollHeight
 
+
+}
+
+
+
+function receivedMessage(message) {
+
+
+  const date = new Date()
+  const hours = date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()
+  const minutes =
+    date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()
+  const time = `${hours}:${minutes}`
+
+
+  messages.insertAdjacentHTML(
+		'beforeend',
+		`
+	  <li class="message-received">
+    <p >${message}</p>
+    <p class="time">${time}</p>
+  </li>
+	`
+	)
+  messages.scrollTop = messages.scrollHeight
 
 }
