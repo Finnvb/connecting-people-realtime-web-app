@@ -28,8 +28,6 @@ section {
   width: 20rem;
   height: 35rem;
   border-radius: 1rem;
-  /* box-shadow: 0.8rem 0.8rem 1.6rem 0 var(--blue), */
-    /* -0.8rem -0.8rem 1.6rem 0 var(--blue); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,19 +56,6 @@ section ul {
   flex-grow: 2;
   width: 20rem;
   overflow-y: scroll;
-}
-
-section ul>li {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background-color: var(--blue);
-  border-radius: 6px;
-  color: var(--green);
-  display: table;
-  max-width: 20rem;
-  overflow-wrap: anywhere;
-  margin: 10px 10px;
-
 }
 
 section form {
@@ -119,22 +104,37 @@ section div:last-child {
 }
 
 
-
-
 .user-info{
   font-size: 1rem;
   color: var(--blue);
   margin-left: 10px;
-  /* background-color: var(--purple); */
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 
 
 
-.message{
+.message-container{
   color: var(--green);
+  padding: 0.2rem 0.3rem;
+  font-size: 0.8rem;
+  background-color: var(--blue);
+  border-radius: 6px;
+  color: var(--green);
+  display: table;
+  max-width: 20rem;
+  overflow-wrap: anywhere;
+  margin: 10px 10px;
 
 }
 
+.name{
+  color: var(--white);
+  margin-bottom: 10px;
+}
 
+.time{
+  color: var(--white);
+  margin-top: 10px;
+  text-align:right;
+}

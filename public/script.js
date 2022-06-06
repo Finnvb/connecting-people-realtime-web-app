@@ -22,14 +22,14 @@ function submitMessage(event) {
   event.preventDefault()
   const message = input.value
   if (input.value === '') return
-  appendMessage(`Jij <br> ${message}`)
+  appendMessage(`<p class="name">Jij</p> ${message}`)
   socket.emit('send-message', message)
   input.value = ''
 }
 
 socket.on('send-message', message => {
 
-  appendMessage(`${message.username} <br> ${message.message}`)
+  appendMessage(`<p class="name">${message.username}</p> ${message.message}`)
 })
 
 socket.on('user-connected', username => {
@@ -71,9 +71,9 @@ function appendMessage(message) {
   messages.insertAdjacentHTML(
 		'beforeend',
 		`
-	  <li class="message">
-    <p>${message}</p>
-    <span>${time}</span>
+	  <li class="message-container">
+    <p >${message}</p>
+    <p class="time">${time}</p>
   </li>
 	`
 	)
