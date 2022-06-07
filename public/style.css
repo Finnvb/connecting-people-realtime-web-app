@@ -25,7 +25,7 @@ main {
 }
 
 .chat {
-  width: 20rem;
+  width: 30rem;
   height: 35rem;
   border-radius: 1rem;
   display: flex;
@@ -34,9 +34,9 @@ main {
   background-color: var(--green);
 }
 
-section div:first-child {
+.chat-top {
   border-bottom: 3px solid var(--blue);
-  width: 20rem;
+  width: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,12 +54,12 @@ section ul {
   padding: 0.2em;
   list-style-type: none;
   flex-grow: 2;
-  width: 20rem;
+  width: 30rem;
   overflow-y: scroll;
   display: flex;
-flex-direction: column;
-/* justify-content: flex-end; */
-align-items: end;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  align-items: end;
 }
 
 section form {
@@ -82,9 +82,9 @@ section form input[type='text'] {
   outline: none;
 }
 
-section div:last-child {
+.chat-bottom {
   border-top: 3px solid var(--blue);
-  width: 20rem;
+  width: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +108,7 @@ section div:last-child {
 }
 
 
-.user-info{
+.user-info {
   font-size: 1rem;
   color: var(--blue);
   margin-left: 10px;
@@ -119,10 +119,10 @@ section div:last-child {
 
 
 
-.message-container{
+.message-container {
   color: var(--green);
   padding: 0.2rem 0.3rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background-color: var(--blue);
   border-radius: 6px;
   color: var(--green);
@@ -134,36 +134,24 @@ section div:last-child {
 
 }
 
-.name{
+.name {
   color: var(--white);
   margin-bottom: 10px;
+  font-size: 0.8rem;
 }
 
-.time{
+.time {
   color: var(--white);
   margin-top: 10px;
-  text-align:right;
+  text-align: right;
+  font-size: 0.8rem;
 }
-
-
-
-.user-count{
-background-color: #a675f5;
-align-self: flex-start;
-margin-top: 100px;
-margin-left: 100px;
-padding: 1rem;
-border-radius: 0.5rem;
-font-size: 14px;
-}
-
-
 
 .message-received {
- 
+
   color: var(--blue);
   padding: 0.2rem 0.3rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background-color: var(--purple);
   border-radius: 6px;
   display: table;
@@ -173,3 +161,46 @@ font-size: 14px;
   margin: 10px 10px;
   margin-right: auto;
 }
+
+.user-count {
+  background-color: #a675f5;
+  align-self: center;
+
+  margin-left: 7rem;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.user-count-container {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.user-icon {
+  margin: 0.2rem 0.2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #66e5bf;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: default;
+
+}
+
+

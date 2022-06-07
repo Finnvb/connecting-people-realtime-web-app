@@ -2,9 +2,10 @@ const socket = io()
 const messages = document.querySelector('section ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
+const userIcons = document.querySelector('.user-count-container');
 const username = prompt('What is your name?')
 const USERNAME_MIN_LENGTH = 3
-let count =  document.querySelector('#count');
+const count = document.querySelector('#count');
 
 while (username === null || username.length < USERNAME_MIN_LENGTH) {
   username = prompt(
@@ -41,13 +42,35 @@ socket.on('user-disconnected', username => {
   newUser(`${username} disconnected`)
 })
 
-socket.on('usercount', data => {
+socket.on('usercount', (data) => {
   count.innerHTML = data;
 })
 
+
+
+
 socket.on('chat-message', (data) => {
   receivedMessage(`<p class="name">${data.username}</p> ${data.message}`);
-  
+
+})
+
+
+
+
+socket.on('update-user-icons', users => {
+  userIcons.innerHTML = ''
+  const userList = Object.values(users)
+
+
+  userList.forEach(user => {
+    userIcons.insertAdjacentHTML('beforeend',
+      `    
+          <div class="user-icon" title="${user}">
+          <p>${user[0]+ user[1] + user[2]}</p>
+          </div>
+      `
+    )
+  })
 })
 
 function appendMessage(message) {
@@ -60,14 +83,14 @@ function appendMessage(message) {
 
 
   messages.insertAdjacentHTML(
-		'beforeend',
-		`
+    'beforeend',
+    `
 	  <li class="message-container">
     <p >${message}</p>
     <p class="time">${time}</p>
   </li>
 	`
-	)
+  )
   messages.scrollTop = messages.scrollHeight
 }
 
@@ -76,23 +99,14 @@ function appendMessage(message) {
 
 function newUser(message) {
 
-  // const messageElement = document.createElement('p')
-  // messageElement.innerText = message
-  // messages.append(messageElement)
 
   messages.insertAdjacentHTML(
-		'beforeend',
-		`
+    'beforeend',
+    `
 	  <p class="user-info">${message}</p>
 	`
-	)
-
-
-
-
+  )
   messages.scrollTop = messages.scrollHeight
-
-
 }
 
 
@@ -108,14 +122,16 @@ function receivedMessage(message) {
 
 
   messages.insertAdjacentHTML(
-		'beforeend',
-		`
+    'beforeend',
+    `
 	  <li class="message-received">
     <p >${message}</p>
     <p class="time">${time}</p>
   </li>
 	`
-	)
+  )
   messages.scrollTop = messages.scrollHeight
 
 }
+
+
