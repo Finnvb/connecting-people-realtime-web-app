@@ -2,10 +2,10 @@ const socket = io()
 const messages = document.querySelector('section ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
-const userIcons = document.querySelector('.user-count-container');
+const userIcons = document.querySelector('.user-count-container')
 const username = prompt('What is your name?')
 const USERNAME_MIN_LENGTH = 3
-const count = document.querySelector('#count');
+const count = document.querySelector('#count')
 
 while (username === null || username.length < USERNAME_MIN_LENGTH) {
   username = prompt(
