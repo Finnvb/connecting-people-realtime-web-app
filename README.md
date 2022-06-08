@@ -15,7 +15,7 @@ Dit is een realtime chat applicatie waarbij gebruikers kunnen chatten met elkaar
 Een realtime chatroom omgeving waar je als gebruiker kan chatten met andere actieve gebruiker gemaakt met behulp van Socket.io.
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
-[[Live versie]((https://fdnd-chatroom-sprint-11.herokuapp.com/)
+[Live versie](https://fdnd-chatroom-sprint-11.herokuapp.com/)
 
 
 ## Kenmerken
