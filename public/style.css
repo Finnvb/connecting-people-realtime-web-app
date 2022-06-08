@@ -21,7 +21,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #555555;
+  background-image: url("./assets/Schermafbeelding\ 2022-06-08\ om\ 11.07.25.png");
 }
 
 .chat {
@@ -44,10 +44,10 @@ main {
 }
 
 section h1 {
-   font-weight: bold;
+  font-weight: bold;
   font-size: 20px;
   color: var(--blue); 
-
+  text-shadow: 2px 2px white;
 }
 
 
