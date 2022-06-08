@@ -4,18 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>FDND Chatroom</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    
 
-    <img src="https://hva.mettlr.nl/uploads/images/company/HvA_RGB-1.png" alt="hva logo" width="250em">
+    <main>
+        <section class="chat">
+          <div class="chat-top">
+            <h1>FDND Chatroom</h1>           
+          </div>
+          <ul></ul>
+          <div class="chat-bottom">
+          <form>
+            <input type="text" autocomplete="off" placeholder="Type a message...">
+            <button  class="send-button">Send</button>
+          </form>
+        </div>
+        </section>
 
-        <h1>Welcome!</h1>
-        <h2>Join the FDND chat </h2>
-        <a href="./index.html">
-            <button>JOIN</button>
-        </a>
-   
+      <section class="user-count" >
+        <h2 >Users: <span id="count" >1</span></h2>
+        <div class="user-count-container">
+     
+     
+       
+      </div>
+      </section>
+      
+      </main>
+
+
+     
+
+
+    
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/script.js"></script>
 </body>
 </html>
