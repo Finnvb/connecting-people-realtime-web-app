@@ -34,10 +34,23 @@ Een realtime chatroom omgeving waar je als gebruiker kan chatten met andere acti
 - Socket.io
 
 ## Installatie
+```
+# Cloning the repository
+git clone https://github.com/Finnvb/connecting-people-realtime-web-app.git
+
+# Install NPM packages
+npm install
+
+# Run local server
+nodemon start
+```
+
 
 ## Gebruik
 
 ## Bronnen
+- [Barebonechat](https://github.com/ju5tu5/barebonechat)
+- [How to Deploy Node js Application on Heroku](https://www.youtube.com/watch?v=maNWl202vy4&t=211s)
 
 ## Licentie
 
