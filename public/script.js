@@ -6,7 +6,9 @@ const userIcons = document.querySelector('.user-count-container')
 const username = prompt('What is your name?')
 const USERNAME_MIN_LENGTH = 3
 const count = document.querySelector('#count')
-
+const typing = document.querySelector('.typing')
+console.log(typing.innerHTML)
+console.log(input)
 while (username === null || username.length < USERNAME_MIN_LENGTH) {
   username = prompt(
     `Username must be longer than ${USERNAME_MIN_LENGTH} characters`
@@ -18,6 +20,10 @@ newUser('You joined')
 socket.emit('new-user', username)
 
 form.addEventListener('submit', submitMessage)
+
+input.addEventListener('keypress', userTyping)
+
+
 
 function submitMessage(event) {
   event.preventDefault()
@@ -74,7 +80,7 @@ socket.on('update-user-icons', users => {
 })
 
 function appendMessage(message) {
-
+  typing.innerHTML = ''
   const date = new Date()
   const hours = date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()
   const minutes =
@@ -112,7 +118,7 @@ function newUser(message) {
 
 
 function receivedMessage(message) {
-
+  typing.innerHTML = ''
 
   const date = new Date()
   const hours = date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()
@@ -135,3 +141,14 @@ function receivedMessage(message) {
 }
 
 
+function userTyping() {
+
+  socket.on('typing', (data) => {
+    typing.innerHTML = `${data} is typing...`
+    setTimeout(() => {
+      typing.innerHTML = ''
+    }, 4000)
+  })
+  socket.emit('typing', username)
+
+}

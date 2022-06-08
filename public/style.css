@@ -90,10 +90,12 @@ section form input[type='text'] {
 .chat-bottom {
   border-top: 3px solid var(--blue);
   width: 30rem;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  justify-content: space-around;
   align-items: center;
-  min-height: 4rem;
+  min-height: 5rem;
+  flex-direction: column;
+  position: relative;
 }
 
 
@@ -208,7 +210,6 @@ section form input[type='text'] {
 }
 
 
-
 .user-icon {
   margin: 0.2rem 0.2rem;
   width: 3rem;
@@ -226,12 +227,12 @@ section form input[type='text'] {
 }
 
 
-
-
-
-
-
-
+.typing{
+  font-size: 1rem;
+color: var(--blue);
+position: absolute;
+top: 0;
+}
 
 
 

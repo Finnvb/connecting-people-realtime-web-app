@@ -6,7 +6,7 @@ const app = express()
 const http = require('http').createServer(app)
 const path = require('path')
 const io = require('socket.io')(http)
-const port = process.env.PORT || 1338
+const port = process.env.PORT || 1339
 let count = 0
 
 const users = {}
@@ -39,6 +39,11 @@ io.on('connection', (socket) => {
   })
 
 
+  socket.on('typing', (username) => {
+    io.emit('typing', username)
+  })
+
+
   socket.on("send-message", (message) => {
     socket.broadcast.emit("chat-message", {
       message: message,
@@ -49,5 +54,5 @@ io.on('connection', (socket) => {
 
 http.listen(port, () => {
   console.log('listening on port ', port)
-  console.log('listening on port: http://localhost:1338/')
+  console.log('listening on port: http://localhost:1339/')
 })
