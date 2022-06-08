@@ -33,7 +33,7 @@ Een realtime chatroom omgeving waar je als gebruiker kan chatten met andere acti
 - Nodemon
 - Socket.io
 
-## Installatie
+## Installatie & gebruik
 ```
 # Cloning the repository
 git clone https://github.com/Finnvb/connecting-people-realtime-web-app.git
@@ -44,9 +44,6 @@ npm install
 # Run local server
 nodemon start
 ```
-
-
-## Gebruik
 
 ## Bronnen
 - [Barebonechat](https://github.com/ju5tu5/barebonechat)
