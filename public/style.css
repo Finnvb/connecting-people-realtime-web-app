@@ -22,6 +22,8 @@ main {
   justify-content: center;
   align-items: center;
   background-image: url("./assets/Schermafbeelding\ 2022-06-08\ om\ 11.07.25.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .chat {
@@ -69,6 +71,7 @@ section form {
   width: 25rem;
   height: 2rem;
   display: flex;
+  justify-content: center;
 }
 
 section form input[type='text'] {
@@ -223,3 +226,34 @@ section form input[type='text'] {
 }
 
 
+
+
+
+
+
+
+
+
+
+@media (max-width: 51rem) {
+
+.chat, .chat-top, .chat-bottom, form, section ul{
+  width: 20rem;
+}
+
+main{
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.user-count{
+  margin: 0;
+  padding: 1rem;
+}
+
+
+section form input[type='text']{
+  flex-grow: 0;
+}
+
+}

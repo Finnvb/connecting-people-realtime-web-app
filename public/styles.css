@@ -1,8 +1,12 @@
 body {
     background-image: url("./assets/Schermafbeelding\ 2022-06-07\ om\ 11.59.44.png");
+   /* background-repeat: no-repeat; */
+   background-size: cover;
     box-sizing: border-box;
     font-family: 'Karla', sans-serif;
+    height: 100vh;
 }
+
 
 h1, h2 {
     display: flex;
@@ -46,3 +50,11 @@ button {
     cursor: pointer;
 }
 
+
+
+@media (max-width: 51rem) {
+
+h1{
+    font-size: 4em;
+}
+}
