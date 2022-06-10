@@ -1,7 +1,7 @@
 # FDND Chatroom
 Dit is een realtime chat applicatie waarbij gebruikers kunnen chatten met elkaar in de chatroom van FDND. 
 
-<img width="500" src="https://user-images.githubusercontent.com/26089533/173046095-89e3271c-1871-42e6-9b1c-821343c9bfc0.png" />
+![afbeelding](https://user-images.githubusercontent.com/26089533/173046557-cd120a13-486b-4aec-98c4-7cc27b00fd60.png)
 
 
 ## Inhoudsopgave
